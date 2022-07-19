@@ -59,3 +59,28 @@
     - Not always good
       - 2 4 6 7 5 3 1 (Downgraded to insertion sort, and thus O(n^2))
 ## Radixsort
+* A sorting algorithm that doesn't use comparisons
+  - Sort by comparing digits in the same position from the least significant digit to the most significant digit, i.e., from right digit to left digit
+  - Note: preserves the input order on each round
+  - L(M)SD: Least(Most) Significant Digit
+  - <img width="496" alt="Screen Shot 2022-07-19 at 4 44 46 PM" src="https://user-images.githubusercontent.com/89602311/179853958-c8007be5-e187-479c-a5a7-4ff4da0e5250.png">
+* To preserves the input order on each round, we need a stable sort
+  - A stable sort is a sorting algorithm that preserves the input order among equivalent values
+  - Mergesort can be implemented as a stable sort when merge state takes out an element from the left first when the left and right elements are the same
+  - Quicksort is not stable: because of the pivot swap
+  - https://www.geeksforgeeks.org/stability-in-sorting-algorithms/
+* There are only limited number of possible values for each digit: extra information
+  - We can use counting sort to sort each digit by O(n)
+* Time complexity
+  - Average: O(nk)
+  - Worst: O(nk)
+  - Best: O(nk)
+  - n is the number of items being sorted, k is the largest number of digits in a key
+## Self Test
+* Sort 3, 1, 4, 1, 5, 9, 2, 6 using Quicksort if we choose the last element as the pivot (not the left center this time)
+  - Do you think this is a stable sorting algorithm
+  - <img width="704" alt="Screen Shot 2022-07-19 at 5 19 53 PM" src="https://user-images.githubusercontent.com/89602311/179858135-2df0cb47-1b8d-4fad-b980-af8b83b7f3f2.png">
+## Extended Readings
+* Counting sort
+  - https://en.wikipedia.org/wiki/Counting_sort
+  - https://www.geeksforgeeks.org/counting-sort/
